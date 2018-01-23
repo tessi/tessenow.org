@@ -1,0 +1,161 @@
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+:root {
+  --card-width: 95vw;
+  --card-shift: 1em;
+  --card-content-color: rgba(255,255,255,0.6);
+  --text-color: #282726;
+}
+
+@media (min-width:480px) {
+  /* smartphones, Android phones, landscape iPhone */
+  :root {
+    --card-width: 92vw;
+    --card-shift: 1.5em;
+  }
+}
+
+@media (min-width:600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  :root {
+    --card-shift: 1.7em;
+  }
+}
+
+@media (min-width:801px)  {
+  /* tablet, landscape iPad, lo-res laptops and desktops */
+  :root {
+    --card-width: 85vw;
+    --card-shift: 2em;
+  }
+}
+
+@media (min-width:1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  :root {
+    --card-width: 1000px;
+    --card-shift: 2.5em;
+  }
+}
+
+body {
+  color: var(--text-color);
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  font-size: 16px;
+  line-height: 1.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin: 2em 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.07em;
+}
+
+h1, h2 {
+  line-height: 1em;
+}
+
+hr {
+  color: #aaa;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.card {
+  width: var(--card-width);
+  min-width: 170px;
+  position: relative;
+  z-index: 1;
+}
+
+.top-triangle {
+  height: 0;
+  width: 0;
+  border-left: var(--card-width) solid transparent;
+  border-bottom: var(--card-shift) solid var(--card-content-color);
+}
+
+.bottom-triangle {
+  height: 0;
+  width: 0;
+  border-right: var(--card-width) solid transparent;
+  border-top: var(--card-shift) solid var(--card-content-color);
+}
+
+.middle-fill {
+  width: calc(var(--card-width) - 3em);
+  background: var(--card-content-color);
+  padding: 0.5em 1.5em;
+}
+
+.content {
+  position: relative;
+}
+
+ul.external-profiles {
+  padding: 0;
+  margin: 0;
+}
+
+.external-profiles li {
+  display: inline;
+  padding-left: 1em;
+}
+
+.external-profiles a {
+  text-decoration: none;
+}
+
+.external-profiles .logo {
+  fill: var(--text-color);
+  width: 2em;
+  height: 2em;
+}
+
+svg#trianglify {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#buzz {
+  white-space: nowrap;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: rotateWord;
+  animation-iteration-count: 1;
+}
+
+@keyframes rotateWord {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.8em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rotate-word {
+  display: inline-block;
+  width: 19.2em;
+}
